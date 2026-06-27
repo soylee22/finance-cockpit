@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Lee & Min &middot; June 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#F6F6F4; --ink:#1A1A18; --ink2:#6B6B66; --faint:#A8A8A2;
+    --hair:#E4E4DF; --panel:#FCFCFB; --status:#C2453C;
+  }
+  * { box-sizing:border-box; }
+  html,body { margin:0; background:var(--bg); }
+  body {
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    color:var(--ink); -webkit-font-smoothing:antialiased;
+    font-variant-numeric:tabular-nums; font-feature-settings:"tnum" 1, "cv01" 1;
+    line-height:1.45;
+  }
+  .wrap { max-width:880px; margin:0 auto; padding:34px 22px 80px; }
+  .num, .stat-v, .hero-num, .cfig, .pk-v, .goal-head, .gv, .tm-net { font-variant-numeric:tabular-nums; }
+
+  .top { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; }
+  .brand { font-size:18px; font-weight:500; letter-spacing:-0.01em; }
+  .brand small { display:block; font-size:11px; font-weight:400; color:var(--faint);
+    letter-spacing:0.14em; text-transform:uppercase; margin-top:6px; }
+  .asof { text-align:right; font-size:11px; color:var(--faint); letter-spacing:0.12em; text-transform:uppercase; }
+  .daypill { display:inline-block; margin-top:8px; font-size:12px; color:var(--ink2); letter-spacing:0.04em; }
+  .daypill b { color:var(--ink); font-weight:600; }
+
+  .incstrip { display:flex; flex-wrap:wrap; align-items:center; gap:6px 18px;
+    margin-top:22px; padding-bottom:22px; border-bottom:1px solid var(--hair);
+    font-size:12px; color:var(--faint); letter-spacing:0.02em; }
+  .incstrip span { text-transform:uppercase; letter-spacing:0.14em; font-size:10.5px; }
+  .incstrip b { font-weight:500; color:var(--ink2); }
+  .incstrip b.tot { color:var(--ink); }
+
+  .hero { text-align:center; padding:30px 0 6px; }
+  .gauge { position:relative; width:min(360px,86vw); margin:0 auto; }
+  .gauge svg { display:block; }
+  .gauge-center { position:absolute; inset:0; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; padding-bottom:8%; }
+  .hero-eyebrow { font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--faint); margin-bottom:2px; }
+  .hero-num { font-size:clamp(60px,17vw,100px); font-weight:200; letter-spacing:-0.04em; line-height:0.96; }
+  .hero-sub { font-size:13.5px; margin-top:8px; color:var(--ink2); letter-spacing:0.01em; }
+  .hero-sub.over { color:var(--status); font-weight:500; }
+  .hero-sub.ok { color:#2E7D52; font-weight:500; }
+  .dot { margin:0 8px; color:var(--faint); }
+
+  .arc-legend { display:flex; flex-wrap:wrap; justify-content:center; gap:8px 20px; margin-top:14px; font-size:11.5px; color:var(--ink2); }
+  .arc-legend span { display:inline-flex; align-items:center; gap:7px; }
+  .arc-legend i { width:14px; height:0; flex:0 0 auto; }
+  .k-fill { height:3px; border-radius:2px; }
+  .k-budget { height:0; border-top:2px solid var(--ink); width:14px; }
+  .k-should { height:0; border-top:1.5px solid var(--faint); width:14px; }
+  .k-proj { width:9px; height:9px; border-radius:50%; border:1.6px solid; background:var(--bg); }
+
+  .stats { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--hair); border:1px solid var(--hair); margin-top:36px; }
+  .stat { background:var(--bg); padding:18px 18px; }
+  .stat-l { font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--faint); }
+  .stat-v { font-size:21px; font-weight:300; letter-spacing:-0.02em; margin-top:8px; }
+  .stat-s { font-size:11.5px; color:var(--ink2); margin-top:3px; }
+
+  .oneoff { margin-top:26px; padding:18px 20px; background:var(--panel); border:1px solid var(--hair); }
+  .oo-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .oo-tag { font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--faint); }
+  .oo-total { font-size:17px; font-weight:400; }
+  .oo-list { display:flex; flex-wrap:wrap; gap:8px 22px; margin-top:12px; font-size:13px; color:var(--ink2); }
+  .oo-item { display:inline-flex; gap:8px; align-items:baseline; }
+  .oo-item b { font-weight:500; color:var(--ink); }
+
+  section { margin-top:64px; }
+  .seclab { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--faint); margin-bottom:4px; }
+  .sectitle { font-size:22px; font-weight:300; letter-spacing:-0.02em; margin:0 0 24px; }
+  .grouplab { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink2); margin:26px 0 14px; }
+  .grouplab:first-of-type { margin-top:0; }
+
+  .crow { padding:14px 0; border-bottom:1px solid var(--hair); }
+  .ctop { display:flex; justify-content:space-between; align-items:baseline; gap:14px; }
+  .cname { font-size:15px; font-weight:400; }
+  .cfig { font-size:14px; white-space:nowrap; }
+  .fig { font-weight:500; }
+  .fig.over { color:var(--status); }
+  .fig-b { color:var(--faint); margin-left:4px; }
+  .bar { margin-top:11px; }
+  .track { position:relative; height:4px; background:var(--hair); border-radius:3px; }
+  .fillc { position:absolute; left:0; top:0; height:4px; border-radius:3px; }
+  .cbtick { position:absolute; top:-3px; width:1.5px; height:10px; background:var(--ink); }
+  .cnote { font-size:11.5px; color:var(--faint); margin-top:8px; }
+
+  .pockets { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--hair); border:1px solid var(--hair); }
+  .pocket { background:var(--bg); padding:22px 18px; }
+  .pk-l { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--faint); }
+  .pk-v { font-size:26px; font-weight:200; letter-spacing:-0.03em; margin-top:10px; }
+  .pocket-note { font-size:12px; color:var(--ink2); margin-top:14px; }
+
+  .goal { display:flex; gap:30px; align-items:flex-start; flex-wrap:wrap; }
+  .goal-ring { flex:0 0 auto; }
+  .ring-pct { font-size:26px; font-weight:300; fill:var(--ink); }
+  .ring-sub { font-size:9px; letter-spacing:0.16em; text-transform:uppercase; fill:var(--faint); }
+  .goal-body { flex:1 1 280px; min-width:0; }
+  .goal-head { font-size:28px; font-weight:200; letter-spacing:-0.03em; }
+  .goal-of { font-size:15px; color:var(--faint); font-weight:300; }
+  .goal-line { font-size:13px; color:var(--ink2); margin-top:6px; }
+  .goal-pace { display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 12px; margin:16px 0 4px; }
+  .gp-tag { font-size:13px; font-weight:600; letter-spacing:0.02em; }
+  .gp-detail { font-size:12.5px; color:var(--ink2); }
+  .goal-grid { margin-top:14px; }
+  .grow { display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px solid var(--hair); font-size:13px; }
+  .grow .gl { color:var(--ink2); }
+  .grow .gv { font-weight:500; }
+  .grow.faint .gl, .grow.faint .gv { color:var(--faint); font-weight:400; }
+  .goal-ru { font-size:12.5px; color:var(--ink2); margin-top:14px; }
+  .goal-earm-h { font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--faint); margin-top:24px; }
+
+  .tmonth { display:flex; align-items:center; gap:16px; padding:16px 0; border-bottom:1px solid var(--hair); }
+  .tm-l { flex:0 0 64px; font-size:12px; color:var(--ink2); letter-spacing:0.02em; }
+  .tm-bars { flex:1 1 auto; min-width:0; display:flex; flex-direction:column; gap:8px; }
+  .tbar { position:relative; display:flex; align-items:center; gap:10px; }
+  .tbar i { display:block; height:6px; border-radius:3px; flex:0 0 auto; min-width:2px; }
+  .tbar span { font-size:11.5px; color:var(--ink2); white-space:nowrap; }
+  .tm-net { flex:0 0 auto; font-size:14px; font-weight:500; text-align:right; min-width:78px; }
+  .tm-net.ok { color:#2E7D52; }
+  .tm-net.over { color:var(--status); }
+  .normal { font-size:12.5px; color:var(--faint); margin-top:18px; }
+
+  .foot { margin-top:64px; padding-top:22px; border-top:1px solid var(--hair);
+    font-size:11px; color:var(--faint); letter-spacing:0.04em; text-align:center; }
+
+  @media (min-width:640px) {
+    .wrap { padding:46px 32px 90px; }
+    .stats { grid-template-columns:repeat(4,1fr); }
+    .twocol { display:grid; grid-template-columns:1fr 1fr; gap:48px; }
+    .twocol .grouplab:first-of-type { margin-top:0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand">Lee & Min<small>Mithril &middot; Money cockpit</small></div>
+    <div class="asof">June 2026
+      <span class="daypill"><b>Day 27</b> of 30 &middot; 3 left</span>
+    </div>
+  </header>
+
+  <div class="incstrip"><span>Planned income</span><b>Lee £3,340</b><b>Min £1,908</b><b class="tot">Total £5,248</b></div>
+
+  <div class="hero">
+    
+    <div class="gauge">
+      <svg viewBox="0 0 320 250" width="100%" height="100%" aria-hidden="true">
+        <path d="M 76.56 225.44 A 118.00 118.00 0 1 1 243.44 225.44" fill="none" stroke="#E4E4DF" stroke-width="5" stroke-linecap="round"/>
+        <path d="M 76.56 225.44 A 118.00 118.00 0 1 1 277.68 150.73" fill="none" stroke="#C2453C" stroke-width="5" stroke-linecap="round"/>
+        <line x1="148.31" y1="33.63" x2="146.38" y2="15.73" stroke="#B6B6B0" stroke-width="1.4"/>
+        <line x1="174.90" y1="38.06" x2="178.59" y2="12.33" stroke="#1A1A18" stroke-width="1.8"/>
+        <circle cx="262.48" cy="200.49" r="4.2" fill="#F6F6F4" stroke="#C2453C" stroke-width="1.8"/>
+      </svg>
+      <div class="gauge-center">
+        <div class="hero-eyebrow">Safe to spend / day</div>
+        <div class="hero-num">£0</div>
+        <div class="hero-sub over">£697.57 over budget<span class="dot">&middot;</span>3 days left</div>
+      </div>
+    </div>
+    <div class="arc-legend"><span><i class="k-fill" style="background:#C2453C"></i>Spent £1,857.57</span><span><i class="k-budget"></i>Budget line £1,160</span><span><i class="k-should"></i>Even pace £1,044</span><span><i class="k-proj" style="border-color:#C2453C"></i>Projected £2,064</span></div>
+  </div>
+
+  <div class="stats"><div class="stat"><div class="stat-l">Flexible used</div><div class="stat-v">£1,857.57 / £1,160</div><div class="stat-s">160% of budget</div></div><div class="stat"><div class="stat-l">Projected end</div><div class="stat-v">£2,063.97</div><div class="stat-s">if pace holds</div></div><div class="stat"><div class="stat-l">Burn rate</div><div class="stat-v">£68.80/day</div><div class="stat-s">recent flexible</div></div><div class="stat"><div class="stat-l">Committed paid</div><div class="stat-v">£519.23</div><div class="stat-s">automatic bills</div></div></div>
+
+  <div class="oneoff"><div class="oo-head"><span class="oo-tag">One-offs, kept out of the pace</span><span class="oo-total">£2,630.77</span></div><div class="oo-list"><span class="oo-item">Home/Setup<b>£122.50</b></span><span class="oo-item">Mortgage/Loan<b>£2,508.27</b></span></div></div>
+
+  <section>
+    <div class="seclab">02 &middot; Where it is going</div>
+    <h2 class="sectitle">Categories this month</h2>
+    <div class="twocol">
+      <div>
+        <div class="grouplab">Flexible &middot; the part you control</div>
+        <div class="crow"><div class="ctop"><span class="cname">Groceries</span><span class="cfig"><span class="fig over">£688.64</span><span class="fig-b">/ £450</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:100.0%;background:#C2453C"></div><i class="cbtick" style="left:65.3%"></i></div></div></div><div class="crow"><div class="ctop"><span class="cname">Transport</span><span class="cfig"><span class="fig over">£371.10</span><span class="fig-b">/ £300</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:100.0%;background:#C2453C"></div><i class="cbtick" style="left:80.8%"></i></div></div></div><div class="crow"><div class="ctop"><span class="cname">Eating Out</span><span class="cfig"><span class="fig over">£283.18</span><span class="fig-b">/ £180</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:100.0%;background:#C2453C"></div><i class="cbtick" style="left:63.6%"></i></div></div></div><div class="crow"><div class="ctop"><span class="cname">Shopping</span><span class="cfig"><span class="fig over">£283.17</span><span class="fig-b">/ £80</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:100.0%;background:#C2453C"></div><i class="cbtick" style="left:28.3%"></i></div></div></div><div class="crow"><div class="ctop"><span class="cname">Health/Gym</span><span class="cfig"><span class="fig over">£157.98</span><span class="fig-b">/ £40</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:100.0%;background:#C2453C"></div><i class="cbtick" style="left:25.3%"></i></div></div></div><div class="crow"><div class="ctop"><span class="cname">Other</span><span class="cfig"><span class="fig">£39.70</span><span class="fig-b">/ £60</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:66.2%;background:#3A3A36"></div><i class="cbtick" style="left:100.0%"></i></div></div></div><div class="crow"><div class="ctop"><span class="cname">Entertainment</span><span class="cfig"><span class="fig">£33.80</span><span class="fig-b">/ £50</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:67.6%;background:#3A3A36"></div><i class="cbtick" style="left:100.0%"></i></div></div></div><div class="crow"><div class="ctop"><span class="cname">Home/Setup</span><span class="cfig"><span class="fig-b">one-off only</span></span></div><div class="bar"><div class="track"></div></div><div class="cnote">+ £122.50 one-off, not in pace</div></div>
+      </div>
+      <div>
+        <div class="grouplab">Committed &middot; automatic</div>
+        <div class="crow"><div class="ctop"><span class="cname">Mortgage/Loan</span><span class="cfig"><span class="fig">£252.45</span><span class="fig-b">/ £258</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:97.8%;background:#3A3A36"></div><i class="cbtick" style="left:100.0%"></i></div></div><div class="cnote">+ £2,508.27 one-off, not in pace</div></div><div class="crow"><div class="ctop"><span class="cname">Utilities</span><span class="cfig"><span class="fig">£126.48</span><span class="fig-b">/ £270</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:46.8%;background:#3A3A36"></div><i class="cbtick" style="left:100.0%"></i></div></div></div><div class="crow"><div class="ctop"><span class="cname">Subscriptions</span><span class="cfig"><span class="fig over">£112.48</span><span class="fig-b">/ £95</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:100.0%;background:#C2453C"></div><i class="cbtick" style="left:84.5%"></i></div></div></div><div class="crow"><div class="ctop"><span class="cname">Telecoms</span><span class="cfig"><span class="fig">£27.82</span><span class="fig-b">/ £45</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:61.8%;background:#3A3A36"></div><i class="cbtick" style="left:100.0%"></i></div></div></div>
+        <div class="cnote" style="margin-top:16px">Budget £2,656/mo. Large direct debits like rent can fall outside this export window.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="seclab">03 &middot; Pockets</div>
+    <h2 class="sectitle">Personal allowances</h2>
+    <div class="pockets"><div class="pocket"><div class="pk-l">Lee</div><div class="pk-v">£100</div></div><div class="pocket"><div class="pk-l">Min</div><div class="pk-v">£100</div></div><div class="pocket"><div class="pk-l">Joint flex</div><div class="pk-v">£50</div></div></div>
+    <div class="pocket-note">Each person's own money once transferred. Spending from pockets is not tracked here.</div>
+  </section>
+
+  <section>
+    <div class="seclab">04 &middot; The goal</div>
+    <h2 class="sectitle">House deposit</h2>
+    
+    <div class="goal">
+      <div class="goal-ring">
+      <svg viewBox="0 0 140 140" width="132" height="132" aria-hidden="true">
+        <circle cx="70" cy="70" r="52" fill="none" stroke="#E4E4DF" stroke-width="4"/>
+        <circle cx="70" cy="70" r="52" fill="none" stroke="#2E7D52" stroke-width="4"
+          stroke-linecap="round" stroke-dasharray="122.20 326.73"
+          transform="rotate(-90 70 70)"/>
+        <text x="70" y="66" text-anchor="middle" class="ring-pct">37%</text>
+        <text x="70" y="86" text-anchor="middle" class="ring-sub">funded</text>
+      </svg></div>
+      <div class="goal-body">
+        <div class="goal-head">£18,699 <span class="goal-of">of £50,000</span></div>
+        <div class="goal-line">£31,301 to go by 2028-05-31
+          <span class="dot">&middot;</span>23 months</div>
+        <div class="goal-pace">
+          <span class="gp-tag" style="color:#2E7D52">On track</span>
+          <span class="gp-detail">need £1,360.91/mo &middot; saving £1,500/mo</span>
+        </div>
+        <div class="goal-grid"><div class="grow"><span class="gl">Joint Monzo + spillover</span><span class="gv">£8,698</span></div><div class="grow"><span class="gl">Premium Bonds</span><span class="gv">£10,001</span></div></div>
+        <div class="goal-ru">Round-ups quietly banked £111.94</div>
+        <div class="goal-earm-h">Earmarked, not counted toward deposit</div>
+        <div class="goal-grid"><div class="grow faint"><span class="gl">FLR(M) visa fund</span><span class="gv">£4,500</span></div><div class="grow faint"><span class="gl">Min Chinese savings</span><span class="gv">£6,590</span></div><div class="grow faint"><span class="gl">S&S ISAs (equity)</span><span class="gv">£3,753</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="seclab">05 &middot; Trend</div>
+    <h2 class="sectitle">Income against spend</h2>
+    <div class="tmonth"><div class="tm-l">2026-05</div><div class="tm-bars"><div class="tbar"><i style="width:68.3%;background:#3A3A36"></i><span>in £3,585</span></div><div class="tbar"><i style="width:65.5%;background:#B6B6B0"></i><span>out £3,438</span></div></div><div class="tm-net over">-£5,711</div></div><div class="tmonth"><div class="tm-l">2026-06</div><div class="tm-bars"><div class="tbar"><i style="width:100.0%;background:#3A3A36"></i><span>in £5,248</span></div><div class="tbar"><i style="width:45.3%;background:#B6B6B0"></i><span>out £2,377</span></div></div><div class="tm-net ok">£241</div></div>
+    <div class="normal">Income shown in the month it funds. Spend excludes one-offs. Typical flexible spend runs about £1,526.87 a month.</div>
+  </section>
+
+  <div class="foot">As of 2026-06-27 &middot; Lee & Min &middot; Monzo stays your daily app &middot; aggregates only, no transactions published</div>
+
+</div>
+</body>
+</html>
