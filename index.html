@@ -359,17 +359,20 @@ document.getElementById('share').addEventListener('click',share);
 // HISTORY
 function buildHistory(){
  const el=document.getElementById('h-table');
+ const drow=(l,v)=>`<div class="ditem"><span>${l}</span><span>${f0(v)}</span></div>`;
  const rows=(D.month_actuals||[]).slice().reverse().map(ma=>{
   const sp=(D.saved&&D.saved[ma.month])?D.saved[ma.month]:null;
   const tgt=sp&&sp.savings_target!=null?sp.savings_target:D.plan.savings_target;
   const hit=ma.saving>=tgt;
   const ml=new Date(ma.month+'-01').toLocaleDateString('en-GB',{month:'long',year:'numeric'});
   const tag=ma.complete?(hit?'<span style="color:#2E7D52;font-weight:600">hit</span>':'<span style="color:#C2453C;font-weight:600">missed</span>'):'<span class="mut">in progress</span>';
-  return `<div class="trow"><div class="ttop"><span><b>${ml}</b> &middot; ${tag}</span>
-    <span class="tfig"><span class="a ${hit?'':'over'}">${f0(ma.saving)}</span> <span class="b">/ ${f0(tgt)} target</span></span></div>
-    <div class="small mut" style="margin-top:5px">income ${f0(ma.income)} &middot; bills ${f0(ma.bills)} &middot; essentials ${f0(ma.essential)} &middot; fun ${f0(ma.fun)}${ma.oneoff?' &middot; one-offs '+f0(ma.oneoff):''}</div></div>`;
+  return `<details class="mcard"><summary style="display:flex;justify-content:space-between;align-items:baseline;padding:13px 14px;cursor:pointer">
+     <span><b>${ml}</b> &middot; ${tag}</span>
+     <span class="tfig"><span class="a ${hit?'':'over'}">${f0(ma.saving)}</span> <span class="b">/ ${f0(tgt)} target</span></span></summary>
+    ${drow('Income',ma.income)}${drow('Bills',ma.bills)}${drow('Essentials',ma.essential)}${drow('Fun',ma.fun)}${ma.oneoff?drow('One-offs',ma.oneoff):''}${drow('Pockets',ma.pockets)}
+    <div class="ditem" style="font-weight:600;border-top:1px solid var(--hair)"><span>Saved</span><span>${f0(ma.saving)}</span></div></details>`;
  }).join('');
- el.innerHTML=rows||'<div class="mut">No months yet. This fills in as the months go by.</div>';
+ el.innerHTML=rows||'<div class="mut">No months yet. This fills in as the months go by, one saved page each.</div>';
 }
 
 function drawJourney(){
