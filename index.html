@@ -69,8 +69,12 @@
 
 <!-- PLAN -->
 <div class="panel active" id="plan">
-  <h2>Allocate June</h2>
-  <p class="lead">Set income, bills and what you want to spend. Saving pops out as what is left, and stays red until you reach your &pound;<span id="tgtlabel"></span> goal.</p>
+  <div style="display:flex;align-items:center;gap:10px;margin:4px 0 2px">
+    <button class="btn" id="pm-prev" style="padding:5px 11px;font-size:16px;line-height:1">&lsaquo;</button>
+    <h2 style="margin:0">Allocate <span id="planmonthlabel"></span></h2>
+    <button class="btn" id="pm-next" style="padding:5px 11px;font-size:16px;line-height:1">&rsaquo;</button>
+  </div>
+  <p class="lead">Plan the month ahead. Set income, bills and what you want to spend; saving pops out as what is left, red until you reach your &pound;<span id="tgtlabel"></span> goal.</p>
   <div class="result" id="result">
     <div class="rtop">
       <div class="rblock"><div class="k">Saving (what's left)</div><div class="v" id="r-save">&pound;0</div><div class="s" id="r-split"></div></div>
@@ -168,6 +172,10 @@ const D=JSON.parse(document.getElementById('data').textContent);
 const KEY='mithril_draft_'+D.month;
 const f0=n=>'\u00a3'+Math.round(n).toLocaleString('en-GB');
 const f2=n=>'\u00a3'+(n).toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2});
+function addMonth(ym,n){const p=ym.split('-').map(Number);const d=new Date(p[0],p[1]-1+n,1);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0');}
+function monthName(ym){return new Date(ym+'-01').toLocaleDateString('en-GB',{month:'long',year:'numeric'});}
+let planMonth=localStorage.getItem('mithril_planmonth')||((()=>{const nx=addMonth(D.month,1);const n=new Date();const cur=n.getFullYear()+'-'+String(n.getMonth()+1).padStart(2,'0');return cur>nx?cur:nx;})());
+function setPlanMonth(ym){planMonth=ym;localStorage.setItem('mithril_planmonth',ym);const el=document.getElementById('planmonthlabel');if(el)el.textContent=monthName(ym);}
 function defaults(){const st={income:{...D.income},bills:{},pockets:{...D.pockets},essential:{},fun:{},savings_target:D.plan.savings_target};
  D.bills.forEach(b=>st.bills[b.name]=b.budget); D.essential.forEach(c=>st.essential[c.cat]=c.budget); D.fun.forEach(c=>st.fun[c.cat]=c.budget); return st;}
 const SAVEDPLAN=(D.saved&&D.saved[D.month])?D.saved[D.month]:null;
@@ -340,7 +348,7 @@ function share(){
  const row=(l,v,st)=>`<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--hair);${st?'font-weight:600;font-size:17px':''}"><span>${l}</span><span>${f0(v)}</span></div>`;
  document.getElementById('shareCard').innerHTML=`<div style="padding:22px 24px">
    <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)">${D.household} &middot; the plan</div>
-   <div style="font-size:26px;font-weight:300;margin:2px 0 16px">${D.monthName}</div>
+   <div style="font-size:26px;font-weight:300;margin:2px 0 16px">${monthName(planMonth)}</div>
    ${row('Income',income)}${row('Bills',bills)}${row('Pockets',pockets)}${row('Essentials',ess)}${row('Fun money',fun)}
    <div style="height:10px"></div>${row('Saving',saving,true)}
    <div style="font-size:12.5px;color:var(--ink2);margin-top:8px">${f0(invest)} invested &middot; ${f0(cash)} to the house deposit</div></div>`;
@@ -378,6 +386,9 @@ function drawJourney(){
  SS.forEach((s,i)=>{const ml=new Date(s.date).toLocaleDateString('en-GB',{month:'short',year:'2-digit'});g+=`<text x="${X(i).toFixed(1)}" y="${H-Bm+15}" text-anchor="middle" font-size="10" fill="#A8A8A2">${ml}</text>`;});
  el.innerHTML=g;
 }
+document.getElementById('pm-prev').addEventListener('click',()=>setPlanMonth(addMonth(planMonth,-1)));
+document.getElementById('pm-next').addEventListener('click',()=>setPlanMonth(addMonth(planMonth,1)));
+setPlanMonth(planMonth);
 buildInputs();recompute();moneyCards();buildWealth();recomputeWealth();buildHistory();drawJourney();loadSheet();
 </script>
 </div></body></html>
