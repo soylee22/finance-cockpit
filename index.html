@@ -1,148 +1,235 @@
 <!DOCTYPE html><html lang="en-GB"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Lee & Min &middot; June 2026</title>
+<title>Lee & Min &middot; plan June 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
- :root{--bg:#F6F6F4;--ink:#1A1A18;--ink2:#6B6B66;--faint:#A8A8A2;--hair:#E4E4DF;--panel:#FCFCFB;--status:#C2453C}
+ :root{--bg:#F6F6F4;--ink:#1A1A18;--ink2:#6B6B66;--faint:#A8A8A2;--hair:#E4E4DF;--panel:#FCFCFB;
+  --green:#2E7D52;--amber:#B7791F;--red:#C2453C;--blue:#2B5B8C}
  *{box-sizing:border-box} html,body{margin:0;background:var(--bg)}
  body{font-family:"Inter",-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);line-height:1.45;
-  font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1;-webkit-font-smoothing:antialiased}
- .wrap{max-width:880px;margin:0 auto;padding:30px 18px 80px}
- .top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
- .brand{font-size:18px;font-weight:500} .brand small{display:block;font-size:11px;color:var(--faint);
-  letter-spacing:.14em;text-transform:uppercase;margin-top:5px}
+  font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+ .wrap{max-width:880px;margin:0 auto;padding:26px 16px 90px}
+ .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;border-bottom:1px solid var(--hair);padding-bottom:14px}
+ .brand{font-size:18px;font-weight:600} .brand small{display:block;font-size:11px;color:var(--faint);letter-spacing:.14em;text-transform:uppercase;margin-top:5px}
  .asof{text-align:right;font-size:11px;color:var(--faint);letter-spacing:.1em;text-transform:uppercase}
- .daypill{display:block;margin-top:7px;color:var(--ink2);font-size:12px;letter-spacing:.03em}
- .daypill b{color:var(--ink)}
- .incstrip{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;margin-top:20px;padding-bottom:20px;
-  border-bottom:1px solid var(--hair);font-size:12px;color:var(--faint)}
- .incstrip span{text-transform:uppercase;letter-spacing:.14em;font-size:10.5px} .incstrip b{color:var(--ink2);font-weight:500}
- .seclab{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin:42px 0 4px}
- h2{font-size:21px;font-weight:300;letter-spacing:-.02em;margin:0 0 18px}
- .waterfall{font-size:13px;color:var(--ink2);margin:14px 0 18px;line-height:1.7} .waterfall .op{color:var(--faint);margin:0 3px}
- .heroflex{display:grid;grid-template-columns:1fr;gap:1px;background:var(--hair);border:1px solid var(--hair)}
- @media(min-width:620px){.heroflex{grid-template-columns:1fr 1fr}}
- .hcell{background:var(--bg);padding:22px}
- .hcell.save{border-left:4px solid var(--status)}
- .heyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
- .hbig{font-family:Inter;font-size:clamp(40px,10vw,58px);font-weight:200;letter-spacing:-.03em;line-height:1.04;margin:4px 0 2px}
- .hsub{font-size:13px;color:var(--ink2)} .hsub b{color:var(--ink);font-weight:500}
- .pill{display:inline-block;margin:10px 0 6px;font-size:11px;font-weight:600;color:#fff;background:var(--status);
-  padding:3px 9px;text-transform:uppercase;letter-spacing:.06em}
- .hnote{font-size:12px;color:var(--ink2);margin-top:6px}
- .splitwrap{margin-top:16px}
- .split{position:relative;height:26px;background:#ECEAE3;border:1px solid var(--hair);overflow:visible;display:flex}
- .seg-save{height:100%;background:var(--status);opacity:.85} .seg-fun{height:100%;background:#2B5B8C;opacity:.7}
- .tmark{position:absolute;top:-6px;height:38px;width:2px;background:var(--ink)}
- .tmark:after{content:"target";position:absolute;top:-14px;left:50%;transform:translateX(-50%);font-size:9.5px;font-weight:700;white-space:nowrap}
- .splitleg{display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink2);margin-top:8px}
- .splitleg i{display:inline-block;width:9px;height:9px;margin-right:5px;vertical-align:middle}
- .tier{margin-top:26px} .tierhead{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:6px;margin-bottom:6px}
- .tiername{font-size:13px;font-weight:600;letter-spacing:.02em} .tiertot{font-size:12px;color:var(--ink2)}
- .crow{padding:11px 0;border-bottom:1px solid var(--hair)}
- .ctop{display:flex;justify-content:space-between;align-items:baseline;gap:12px} .cname{font-size:14px}
- .cfig{font-size:13px;white-space:nowrap} .fig{font-weight:500} .fig.over{color:#C2453C} .fig-b{color:var(--faint);margin-left:4px}
- .bar{margin-top:9px} .track{position:relative;height:4px;background:var(--hair);border-radius:3px}
- .fillc{position:absolute;left:0;top:0;height:4px;border-radius:3px} .cbtick{position:absolute;top:-3px;width:1.5px;height:10px;background:var(--ink)}
- .cnote{font-size:11.5px;color:var(--faint);margin-top:7px}
- .pockets{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair)}
- .pocket{background:var(--bg);padding:20px 16px} .pk-l{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
- .pk-v{font-size:24px;font-weight:200;margin-top:8px}
- .goal{display:flex;gap:26px;align-items:flex-start;flex-wrap:wrap} .goal-ring{flex:0 0 auto}
- .ring-pct{font-size:23px;font-weight:300;fill:var(--ink)} .ring-sub{font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;fill:var(--faint)}
- .goal-body{flex:1 1 260px;min-width:0} .goal-head{font-size:24px;font-weight:200} .goal-of{font-size:14px;color:var(--faint)}
- .goal-line{font-size:13px;color:var(--ink2);margin-top:6px} .gp-tag{font-weight:600}
- .goal-ru{font-size:12.5px;color:var(--ink2);margin-top:12px} .goal-earm{font-size:11.5px;color:var(--faint);margin-top:8px}
- .trend{display:flex;align-items:flex-end;gap:12px;height:110px} .tcol{flex:1;display:flex;flex-direction:column;align-items:center;height:100%}
- .tbars{flex:1;display:flex;align-items:flex-end;gap:4px;width:100%;justify-content:center} .tb{width:11px}
- .tlab{font-size:11px;color:var(--faint);margin-top:5px} .legend{font-size:11.5px;color:var(--ink2);margin-top:8px}
- .legend i{display:inline-block;width:9px;height:9px;margin:0 4px 0 10px;vertical-align:middle}
- .mut{color:var(--ink2)} .small{font-size:12px}
- .foot{margin-top:48px;padding-top:16px;border-top:1px solid var(--hair);font-size:11px;color:var(--faint);text-align:center}
+ .tabs{display:flex;gap:6px;margin:18px 0} .tab{font:inherit;font-size:13px;font-weight:500;padding:8px 14px;border:1px solid var(--hair);background:#fff;color:var(--ink2);cursor:pointer}
+ .tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+ .panel{display:none} .panel.active{display:block}
+ .seclab{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin:26px 0 10px}
+ h2{font-size:20px;font-weight:300;letter-spacing:-.02em;margin:0 0 6px}
+ .lead{font-size:13px;color:var(--ink2);margin:0 0 14px}
+ /* live result */
+ .result{position:sticky;top:0;z-index:5;background:var(--panel);border:1px solid var(--hair);border-left:5px solid var(--status,#2E7D52);
+   padding:16px 18px;margin:0 0 22px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+ .result .rtop{display:flex;flex-wrap:wrap;gap:18px 30px;align-items:flex-end}
+ .rblock .k{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+ .rblock .v{font-size:32px;font-weight:200;letter-spacing:-.02em;line-height:1}
+ .rblock .s{font-size:12px;color:var(--ink2);margin-top:3px}
+ .banner{margin-top:12px;font-size:13.5px;font-weight:500;padding:9px 12px;color:#fff;background:var(--status,#2E7D52)}
+ .allocbar{display:flex;height:22px;border:1px solid var(--hair);margin-top:12px;overflow:hidden}
+ .allocbar > span{height:100%} .albills{background:#9aa7ad} .alpock{background:#c9c4b8} .aless{background:#7e857f} .alfun{background:#2B5B8C;opacity:.7} .alsave{background:var(--green)}
+ .alleg{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:11px;color:var(--ink2);margin-top:7px} .alleg i{display:inline-block;width:9px;height:9px;margin-right:4px;vertical-align:middle}
+ .grp{margin-top:8px;border:1px solid var(--hair);background:#fff}
+ .grph{display:flex;justify-content:space-between;align-items:center;padding:11px 14px;background:#FBFBF9;border-bottom:1px solid var(--hair);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink2)}
+ .grph b{color:var(--ink);font-weight:600}
+ .row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:9px 14px;border-bottom:1px solid var(--hair)}
+ .row:last-child{border-bottom:0} .row label{font-size:14px;flex:1}
+ .row .hint{font-size:11px;color:var(--faint);margin-left:6px}
+ input.num{font:inherit;font-size:14px;width:104px;text-align:right;padding:7px 9px;border:1px solid var(--hair);background:#fff;color:var(--ink);font-variant-numeric:tabular-nums}
+ input.num:focus{outline:none;border-color:var(--ink)}
+ .btns{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 6px}
+ .btn{font:inherit;font-size:13px;font-weight:500;padding:9px 14px;border:1px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer}
+ .btn.primary{background:var(--ink);color:#fff}
+ .small{font-size:12px;color:var(--ink2)} .mut{color:var(--faint)}
+ /* track */
+ .trow{padding:12px 0;border-bottom:1px solid var(--hair)} .ttop{display:flex;justify-content:space-between;font-size:14px}
+ .tfig .a{font-weight:600} .tfig .b{color:var(--faint)} .over{color:var(--red)}
+ .tbar{position:relative;height:5px;background:var(--hair);border-radius:3px;margin-top:8px} .tfill{position:absolute;left:0;top:0;height:5px;border-radius:3px} .ttick{position:absolute;top:-3px;width:1.5px;height:11px;background:var(--ink)}
+ .chartbox{border:1px solid var(--hair);background:var(--panel);padding:14px;margin-top:10px}
+ .foot{margin-top:44px;padding-top:14px;border-top:1px solid var(--hair);font-size:11px;color:var(--faint);text-align:center}
 </style></head><body><div class="wrap">
 
 <div class="top">
-  <div class="brand">Lee & Min<small>Mithril &middot; Money cockpit</small></div>
-  <div class="asof">June 2026<span class="daypill"><b>Day 27</b> of 30 &middot; 3 left</span></div>
+  <div class="brand">Lee & Min<small>Mithril &middot; Money</small></div>
+  <div class="asof">June 2026<br>updated 27 Jun 2026</div>
 </div>
-<div class="incstrip"><span>Planned income</span><b>Lee £3,340</b><b>Min £1,908</b><b>Total £5,248</b></div>
 
-<div class="seclab">01 &middot; The plan this month</div>
-<h2>Saving vs fun, for June</h2>
-<div class="waterfall">£5,248 income <span class="op">&minus;</span> £2,656 bills <span class="op">&minus;</span> £250 pockets <span class="op">&minus;</span> £1,353 essentials <span class="op">=</span> <b>£989</b> to split between fun and saving</div>
-<div class="heroflex">
-  <div class="hcell save">
-    <div class="heyebrow">On track to save</div>
-    <div class="hbig">£278</div>
-    <div class="hsub"><b>£1,222</b> short of the £1,500 target</div>
-    <div class="pill">Behind</div>
-    <div class="hnote">into £28 invest &middot; £251 cash deposit</div>
+<div class="tabs">
+  <button class="tab active" data-tab="plan">Plan</button>
+  <button class="tab" data-tab="track">Track</button>
+</div>
+
+<!-- ============ PLAN ============ -->
+<div class="panel active" id="plan">
+  <h2>Allocate June</h2>
+  <p class="lead">Set income, bills and what you want to spend. Saving pops out as what's left. It stays red until you hit your &pound;<span id="tgtlabel"></span> savings goal.</p>
+
+  <div class="result" id="result">
+    <div class="rtop">
+      <div class="rblock"><div class="k">Saving (what's left)</div><div class="v" id="r-save">&pound;0</div><div class="s" id="r-split"></div></div>
+      <div class="rblock"><div class="k">Fun money</div><div class="v" id="r-fun">&pound;0</div><div class="s">of income spent on wants</div></div>
+      <div class="rblock"><div class="k">Goal</div><div class="v" id="r-tgt">&pound;0</div><div class="s">monthly savings target</div></div>
+    </div>
+    <div class="banner" id="r-banner"></div>
+    <div class="allocbar" id="allocbar"></div>
+    <div class="alleg">
+      <span><i class="albills"></i>bills</span><span><i class="alpock"></i>pockets</span>
+      <span><i class="aless"></i>essentials</span><span><i class="alfun"></i>fun</span><span><i class="alsave"></i>saving</span>
+    </div>
   </div>
-  <div class="hcell">
-    <div class="heyebrow">Fun money</div>
-    <div class="hbig">£640</div>
-    <div class="hsub">over the fun budget, eating into savings</div>
-    <div class="hnote" style="margin-top:34px">£640 spent of £0 &middot; 3 days left</div>
+
+  <div class="btns">
+    <button class="btn primary" id="recommend">Recommend from last month</button>
+    <button class="btn" id="reset">Reset to budgets</button>
   </div>
+
+  <div class="seclab">Income</div>
+  <div class="grp" id="g-income"></div>
+  <div class="seclab">Bills &middot; predictable</div>
+  <div class="grp" id="g-bills"></div>
+  <div class="seclab">Pockets &middot; personal allowances</div>
+  <div class="grp" id="g-pockets"></div>
+  <div class="seclab">Essential living</div>
+  <div class="grp" id="g-essential"></div>
+  <div class="seclab">Fun &middot; the lever on saving</div>
+  <div class="grp" id="g-fun"></div>
+  <div class="seclab">Savings goal</div>
+  <div class="grp" id="g-plan"></div>
+  <p class="small" style="margin-top:14px">Saves on this device automatically. Saving splits 10% into Trading 212 investing, the rest to the cash deposit.</p>
 </div>
-<div class="splitwrap">
-  <div class="split">
-    <div class="seg-save" style="width:28.1%"></div>
-    <div class="seg-fun" style="width:71.9%"></div>
-    <div class="tmark" style="left:100.0%"></div>
+
+<!-- ============ TRACK ============ -->
+<div class="panel" id="track">
+  <h2>Where we are vs the plan</h2>
+  <p class="lead">Day 27 of 30. The line shows actual fun spend against the steady line your plan implies.</p>
+  <div class="chartbox"><svg id="chart" viewBox="0 0 860 240" width="100%" style="display:block"></svg>
+    <div class="alleg"><span><i style="background:#2B5B8C;opacity:.7"></i>actual fun</span><span><i style="background:#A8A8A2"></i>planned (steady)</span></div>
   </div>
-  <div class="splitleg">
-    <span><i style="background:var(--status)"></i>Saving £278</span>
-    <span><i style="background:#2B5B8C;opacity:.7"></i>Fun £711</span>
-    <span>of £989 available</span>
-  </div>
+  <div class="seclab">Essential living &middot; actual vs plan</div>
+  <div id="t-essential"></div>
+  <div class="seclab">Fun &middot; actual vs plan</div>
+  <div id="t-fun"></div>
+  <div class="seclab">The goal</div>
+  <p class="small">House deposit: <b>&pound;18,699</b> of &pound;50,000 (37%) &middot; net worth &pound;28,224 &middot; <a href="../site_local/explorer.html">open the spend explorer &rarr;</a></p>
 </div>
 
-<div class="seclab">02 &middot; Where it is going</div>
-<h2>Bills, essentials, fun</h2>
-<div class="tier">
-  <div class="tierhead"><span class="tiername">Bills &middot; predictable</span><div class="tiertot">£519.23 of £2,656 budget</div></div>
-  <div class="crow"><div class="ctop"><span class="cname">Mortgage/Loan</span><span class="cfig"><span class="fig">£252.45</span><span class="fig-b">/ £258</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:97.8%;background:#3A3A36"></div><i class="cbtick" style="left:100.0%"></i></div></div></div><div class="crow"><div class="ctop"><span class="cname">Utilities</span><span class="cfig"><span class="fig">£126.48</span><span class="fig-b">/ £270</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:46.8%;background:#3A3A36"></div><i class="cbtick" style="left:100.0%"></i></div></div></div><div class="crow"><div class="ctop"><span class="cname">Subscriptions</span><span class="cfig"><span class="fig over">£112.48</span><span class="fig-b">/ £95</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:100.0%;background:#C2453C"></div><i class="cbtick" style="left:84.5%"></i></div></div></div><div class="crow"><div class="ctop"><span class="cname">Telecoms</span><span class="cfig"><span class="fig">£27.82</span><span class="fig-b">/ £45</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:61.8%;background:#3A3A36"></div><i class="cbtick" style="left:100.0%"></i></div></div></div>
-  <div class="cnote">Big direct debits like rent can land outside this export window; the plan uses the £2,656 budget.</div>
-</div>
-<div class="tier">
-  <div class="tierhead"><span class="tiername">Essential living</span><div class="tiertot">£1,217.72 of £790 budget &middot; projected £1,353</div></div>
-  <div class="crow"><div class="ctop"><span class="cname">Groceries</span><span class="cfig"><span class="fig over">£688.64</span><span class="fig-b">/ £450</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:100.0%;background:#C2453C"></div><i class="cbtick" style="left:65.3%"></i></div></div></div><div class="crow"><div class="ctop"><span class="cname">Transport</span><span class="cfig"><span class="fig over">£371.10</span><span class="fig-b">/ £300</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:100.0%;background:#C2453C"></div><i class="cbtick" style="left:80.8%"></i></div></div></div><div class="crow"><div class="ctop"><span class="cname">Health/Gym</span><span class="cfig"><span class="fig over">£157.98</span><span class="fig-b">/ £40</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:100.0%;background:#C2453C"></div><i class="cbtick" style="left:25.3%"></i></div></div></div>
-</div>
-<div class="tier">
-  <div class="tierhead"><span class="tiername">Fun &middot; the lever on saving</span><div class="tiertot">£639.85 of £370 budget &middot; projected £711</div></div>
-  <div class="crow"><div class="ctop"><span class="cname">Eating Out</span><span class="cfig"><span class="fig over">£283.18</span><span class="fig-b">/ £180</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:100.0%;background:#C2453C"></div><i class="cbtick" style="left:63.6%"></i></div></div></div><div class="crow"><div class="ctop"><span class="cname">Shopping</span><span class="cfig"><span class="fig over">£283.17</span><span class="fig-b">/ £80</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:100.0%;background:#C2453C"></div><i class="cbtick" style="left:28.3%"></i></div></div></div><div class="crow"><div class="ctop"><span class="cname">Other</span><span class="cfig"><span class="fig">£39.70</span><span class="fig-b">/ £60</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:66.2%;background:#2B5B8C"></div><i class="cbtick" style="left:100.0%"></i></div></div></div><div class="crow"><div class="ctop"><span class="cname">Entertainment</span><span class="cfig"><span class="fig">£33.80</span><span class="fig-b">/ £50</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:67.6%;background:#2B5B8C"></div><i class="cbtick" style="left:100.0%"></i></div></div></div><div class="crow"><div class="ctop"><span class="cname">Home/Setup</span><span class="cfig"><span class="fig">£0.00</span><span class="fig-b">no budget</span></span></div><div class="bar"><div class="track"><div class="fillc" style="width:0.0%;background:#2B5B8C"></div></div></div><div class="cnote">+ £122.50 one-off, not in the plan</div></div>
-</div>
+<div class="foot">As of 27 Jun 2026 &middot; Lee & Min &middot; plan persists on this device &middot; aggregates only</div>
 
-<div class="seclab">03 &middot; Pockets</div>
-<h2>Personal allowances</h2>
-<div class="pockets">
-  <div class="pocket"><div class="pk-l">Lee</div><div class="pk-v">£100</div></div>
-  <div class="pocket"><div class="pk-l">Min</div><div class="pk-v">£100</div></div>
-  <div class="pocket"><div class="pk-l">Joint flex</div><div class="pk-v">£50</div></div>
-</div>
-<div class="mut small" style="margin-top:8px">Each person's own money once transferred, not tracked here.</div>
+<script id="data" type="application/json">{"household": "Lee & Min", "month": "2026-06", "monthName": "June 2026", "days_total": 30, "days_elapsed": 27, "days_left": 3, "income": {"lee": 3340, "min": 1908}, "bills": [{"name": "Housing", "budget": 1966.67}, {"name": "Utilities", "budget": 270.0}, {"name": "Telecoms", "budget": 45.0}, {"name": "Loans & credit", "budget": 258.0}, {"name": "Insurance", "budget": 21.0}, {"name": "Subscriptions", "budget": 95.0}], "essential": [{"cat": "Groceries", "budget": 450.0, "actual": 688.64, "proj": 765.16}, {"cat": "Transport", "budget": 300.0, "actual": 371.1, "proj": 412.33}, {"cat": "Health/Gym", "budget": 40.0, "actual": -0.0, "proj": -0.0}], "fun": [{"cat": "Eating Out", "budget": 180.0, "actual": 283.18, "proj": 314.64}, {"cat": "Shopping", "budget": 80.0, "actual": 283.17, "proj": 314.63}, {"cat": "Entertainment", "budget": 50.0, "actual": 33.8, "proj": 37.56}, {"cat": "Travel/Holiday", "budget": 0.0, "actual": 0.0, "proj": 0.0}, {"cat": "Home/Setup", "budget": 0.0, "actual": -0.0, "proj": -0.0}, {"cat": "Other", "budget": 60.0, "actual": 39.7, "proj": 44.11}], "pockets": {"lee": 100, "min": 100, "joint_flex": 50}, "plan": {"savings_target": 1500.0, "invest_share": 0.1}, "daily": {"days_total": 30, "days_elapsed": 27, "essential": [49.83, 65.03, 71.23, 84.63, 97.33, 119.71, 201.9, 214.1, 228.0, 243.1, 250.6, 293.68, 359.29, 378.11, 386.91, 393.61, 415.06, 435.11, 471.95, 633.29, 688.3, 847.38, 855.78, 886.25, 918.65, 935.11, 1059.74, null, null, null], "fun": [4.25, 14.25, 14.25, 14.25, 28.55, 65.05, 145.12, 145.12, 174.32, 174.32, 174.32, 183.62, 206.27, 217.87, 217.87, 222.77, 222.77, 222.77, 237.76, 377.54, 585.72, 585.72, 585.72, 590.92, 606.85, 606.85, 639.85, null, null, null], "bills": [0.0, 99.11, 89.76, 114.59, 305.99, 305.99, 310.48, 310.48, 310.48, 297.7, 335.15, 425.15, 425.15, 443.14, 443.14, 418.31, 418.31, 418.31, 494.43, 494.43, 494.43, 494.43, 494.43, 494.43, 519.23, 519.23, 519.23, null, null, null]}, "goal": {"name": "House deposit", "target": 50000.0, "current_cash": 18699.0, "pct": 37.4, "deadline": "2028-05-31", "months_left": 23, "on_track": true}, "wealth": {"net_worth": 28224.0}, "flows": {"invested_month": 35.0}}</script>
+<script>
+const D = JSON.parse(document.getElementById('data').textContent);
+const KEY = 'mithril_plan_' + D.month;
+const f0 = n => '\u00a3' + Math.round(n).toLocaleString('en-GB');
+const f2 = n => '\u00a3' + (n).toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2});
 
-<div class="seclab">04 &middot; The goal</div>
-<h2>House deposit</h2>
-<div class="goal">
-  <div class="goal-ring"><svg viewBox="0 0 120 120" width="116" height="116" aria-hidden="true"><circle cx="60" cy="60" r="46" fill="none" stroke="#E4E4DF" stroke-width="4"/><circle cx="60" cy="60" r="46" fill="none" stroke="#2E7D52" stroke-width="4" stroke-linecap="round" stroke-dasharray="108.1 289.0" transform="rotate(-90 60 60)"/><text x="60" y="57" text-anchor="middle" class="ring-pct">37%</text><text x="60" y="74" text-anchor="middle" class="ring-sub">funded</text></svg></div>
-  <div class="goal-body">
-    <div class="goal-head">£18,699 <span class="goal-of">of £50,000 by May 2028</span></div>
-    <div class="goal-line"><span class="gp-tag" style="color:#2E7D52">On track</span> &middot; need £1,361/mo &middot; £31,301 to go &middot; 23 months</div>
-    <div class="goal-ru">Net worth £28,224 &middot; invested this month £35 &middot; debt paid £2,508</div>
-    <div class="goal-earm">Earmarked, not counted toward deposit: FLR(M) visa fund £4,500 &middot; Min Chinese savings £6,590 &middot; Min S&S ISA £3,753 &middot; Lee S&S ISA (T212) £0</div>
-  </div>
-</div>
+function defaults(){
+  const st = {income:{...D.income}, bills:{}, pockets:{...D.pockets},
+    essential:{}, fun:{}, savings_target:D.plan.savings_target};
+  D.bills.forEach(b=>st.bills[b.name]=b.budget);
+  D.essential.forEach(c=>st.essential[c.cat]=c.budget);
+  D.fun.forEach(c=>st.fun[c.cat]=c.budget);
+  return st;
+}
+let S = (()=>{ try{const s=JSON.parse(localStorage.getItem(KEY)); return s&&s.income?s:defaults();}catch(e){return defaults();} })();
+function save(){ localStorage.setItem(KEY, JSON.stringify(S)); }
 
-<div class="seclab">05 &middot; Trend</div>
-<h2>Income against spend</h2>
-<div class="trend"><div class="tcol"><div class="tbars"><span class="tb" style="height:68%;background:#1A8F5A" title="income £3,585"></span><span class="tb" style="height:66%;background:#9aa7ad" title="spend £3,438"></span></div><div class="tlab">May</div></div><div class="tcol"><div class="tbars"><span class="tb" style="height:100%;background:#1A8F5A" title="income £5,248"></span><span class="tb" style="height:45%;background:#9aa7ad" title="spend £2,377"></span></div><div class="tlab">Jun</div></div></div>
-<div class="legend"><i style="background:#1A8F5A"></i>income (month it funds)<i style="background:#9aa7ad"></i>spend (one-offs excluded)</div>
-<div class="mut small" style="margin-top:8px">Typical fun spend runs about £482.87 a month.</div>
+function rowsInto(id, items, onchange){
+  const el=document.getElementById(id); el.innerHTML='';
+  items.forEach(it=>{
+    const r=document.createElement('div'); r.className='row';
+    r.innerHTML=`<label>${it.label}${it.hint?'<span class=hint>'+it.hint+'</span>':''}</label>`;
+    const inp=document.createElement('input'); inp.type='number'; inp.className='num'; inp.value=it.value; inp.step='1';
+    inp.addEventListener('input',()=>{onchange(it.key, parseFloat(inp.value)||0); recompute();});
+    r.appendChild(inp); el.appendChild(r);
+  });
+}
 
-<div class="foot">As of 27 Jun 2026 &middot; Lee & Min &middot; saving is the residual, split 10% invest / 90% deposit &middot; aggregates only, nothing published below the line</div>
+function buildInputs(){
+  rowsInto('g-income',[{key:'lee',label:'Lee net',value:S.income.lee},{key:'min',label:'Min net',value:S.income.min}],(k,v)=>S.income[k]=v);
+  rowsInto('g-bills', D.bills.map(b=>({key:b.name,label:b.name,value:S.bills[b.name]??b.budget})),(k,v)=>S.bills[k]=v);
+  rowsInto('g-pockets',[{key:'lee',label:'Lee pocket',value:S.pockets.lee},{key:'min',label:'Min pocket',value:S.pockets.min},{key:'joint_flex',label:'Joint flex',value:S.pockets.joint_flex}],(k,v)=>S.pockets[k]=v);
+  rowsInto('g-essential', D.essential.map(c=>({key:c.cat,label:c.cat,hint:'last '+f0(c.proj),value:S.essential[c.cat]??c.budget})),(k,v)=>S.essential[k]=v);
+  rowsInto('g-fun', D.fun.map(c=>({key:c.cat,label:c.cat,hint:'last '+f0(c.proj),value:S.fun[c.cat]??c.budget})),(k,v)=>S.fun[k]=v);
+  rowsInto('g-plan',[{key:'savings_target',label:'Monthly savings target',value:S.savings_target}],(k,v)=>S.savings_target=v);
+}
 
+const sum = o => Object.values(o).reduce((a,b)=>a+(+b||0),0);
+function recompute(){
+  const income = (+S.income.lee||0)+(+S.income.min||0);
+  const bills=sum(S.bills), pockets=sum(S.pockets), ess=sum(S.essential), fun=sum(S.fun);
+  const saving = income - bills - pockets - ess - fun;
+  const tgt = +S.savings_target||0;
+  const ishare = D.plan.invest_share;
+  const invest = Math.max(0,saving)*ishare, cash = saving-invest;
+  // status
+  let col='#2E7D52', msg='';
+  if (saving < 0){col='#C2453C'; msg=`Over-allocated by ${f0(-saving)}. You have planned to spend more than you earn, pull something down.`;}
+  else if (saving >= tgt){col='#2E7D52'; msg=`On track. Saving ${f0(saving)}, that is ${f0(saving-tgt)} above your ${f0(tgt)} goal.`;}
+  else if (saving >= tgt*0.6){col='#B7791F'; msg=`Close. Saving ${f0(saving)}, ${f0(tgt-saving)} short of the ${f0(tgt)} goal. Trim fun a little.`;}
+  else {col='#C2453C'; msg=`Saving only ${f0(saving)}, ${f0(tgt-saving)} short of ${f0(tgt)}. Cut spending to balance.`;}
+  document.documentElement.style.setProperty('--status',col);
+  document.getElementById('result').style.borderLeftColor=col;
+  document.getElementById('r-save').textContent=f0(saving);
+  document.getElementById('r-split').innerHTML = saving>0 ? `into ${f0(invest)} invest &middot; ${f0(cash)} cash` : '&nbsp;';
+  document.getElementById('r-fun').textContent=f0(fun);
+  document.getElementById('r-tgt').textContent=f0(tgt);
+  const b=document.getElementById('r-banner'); b.textContent=msg; b.style.background=col;
+  // alloc bar
+  const segs=[['albills',bills],['alpock',pockets],['aless',ess],['alfun',fun],['alsave',Math.max(0,saving)]];
+  const tot=income>0?income:1;
+  document.getElementById('allocbar').innerHTML = segs.map(([c,v])=>`<span class="${c}" style="width:${Math.max(0,v)/tot*100}%"></span>`).join('');
+  document.getElementById('tgtlabel').textContent = Math.round(tgt).toLocaleString('en-GB');
+  drawTrack(fun);
+  save();
+}
+
+// ---- TRACK ----
+function trackRows(id, items){
+  const el=document.getElementById(id); el.innerHTML='';
+  items.forEach(c=>{
+    const planned = (id.includes('essential')?S.essential[c.cat]:S.fun[c.cat]) ?? c.budget;
+    const actual = c.actual, proj = c.proj;
+    const over = proj>planned && planned>0;
+    const sc=Math.max(planned,proj,1);
+    const r=document.createElement('div'); r.className='trow';
+    r.innerHTML=`<div class="ttop"><span>${c.cat}</span><span class="tfig"><span class="a ${over?'over':''}">${f2(actual)}</span> <span class="b">/ ${f0(planned)} plan &middot; proj ${f0(proj)}</span></span></div>
+      <div class="tbar"><div class="tfill" style="width:${Math.min(100,actual/sc*100)}%;background:${over?'#C2453C':'#2B5B8C'}"></div><div class="ttick" style="left:${Math.min(100,planned/sc*100)}%"></div></div>`;
+    el.appendChild(r);
+  });
+}
+function drawTrack(funPlan){
+  trackRows('t-essential', D.essential);
+  trackRows('t-fun', D.fun);
+  // chart: actual fun cumulative vs steady planned line to funPlan
+  const dt=D.daily.days_total, de=D.daily.days_elapsed, cum=(D.daily.fun||[]);
+  const W=860,H=240,L=46,R=14,T=12,B=26;
+  const X=d=>L+(d/dt)*(W-L-R), Y=v=>{const ymax=Math.max(funPlan, ...(cum.filter(x=>x!=null)), 1)*1.1; return H-B-(v/ymax)*(H-B-T);};
+  let g='';
+  // planned steady line 0..funPlan
+  g+=`<line x1="${X(0)}" y1="${Y(0)}" x2="${X(dt)}" y2="${Y(funPlan)}" stroke="#A8A8A2" stroke-width="1.5" stroke-dasharray="4 4"/>`;
+  // actual polyline
+  const pts=[]; for(let d=1; d<=de; d++){ if(cum[d-1]!=null) pts.push(`${X(d).toFixed(1)},${Y(cum[d-1]).toFixed(1)}`); }
+  if(pts.length) g+=`<polyline points="${pts.join(' ')}" fill="none" stroke="#2B5B8C" stroke-width="2"/>`;
+  // today marker
+  g+=`<line x1="${X(de)}" y1="${T}" x2="${X(de)}" y2="${H-B}" stroke="#E4E4DF"/>`;
+  g+=`<text x="${X(de)+3}" y="${H-B+15}" font-size="10" fill="#A8A8A2">today</text>`;
+  g+=`<text x="${X(dt)-2}" y="${Y(funPlan)-5}" font-size="10" fill="#A8A8A2" text-anchor="end">plan ${f0(funPlan)}</text>`;
+  document.getElementById('chart').innerHTML=g;
+}
+
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+  t.classList.add('active'); document.getElementById(t.dataset.tab).classList.add('active');
+}));
+document.getElementById('recommend').addEventListener('click',()=>{
+  D.essential.forEach(c=>S.essential[c.cat]=c.proj); D.fun.forEach(c=>S.fun[c.cat]=c.proj);
+  buildInputs(); recompute();
+});
+document.getElementById('reset').addEventListener('click',()=>{ S=defaults(); buildInputs(); recompute(); });
+
+buildInputs(); recompute();
+</script>
 </div></body></html>
