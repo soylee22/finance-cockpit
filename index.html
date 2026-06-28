@@ -81,6 +81,7 @@
   </div>
   <div class="btns">
     <button class="btn primary" id="recommend">Recommend from last month</button>
+    <button class="btn" id="share">Share for Min</button>
     <button class="btn" id="download">Save plan (download)</button>
     <button class="btn" id="revert">Revert to saved</button>
     <button class="btn" id="reset">Reset to budgets</button>
@@ -117,30 +118,34 @@
 <!-- WEALTH -->
 <div class="panel" id="wealth">
   <h2>Net worth</h2>
-  <div class="nwbig">
-    <div class="nwc"><div class="k">Net worth</div><div class="v">£28,224</div></div>
-    <div class="nwc"><div class="k">Total assets</div><div class="v">£33,542</div></div>
-    <div class="nwc"><div class="k">Total liabilities</div><div class="v">£5,318</div></div>
-  </div>
-  <div class="seclab">Assets</div>
-  <table><thead><tr><th>Asset</th><th>Use</th><th class="n">Value</th></tr></thead><tbody><tr><td>Joint Monzo + spillover</td><td class="tag">deposit</td><td class="n">£8,698</td></tr><tr><td>Premium Bonds</td><td class="tag">deposit</td><td class="n">£10,001</td></tr><tr><td>Lee Cash ISA</td><td class="tag">deposit</td><td class="n">£0</td></tr><tr><td>Min Cash ISA</td><td class="tag">deposit</td><td class="n">£0</td></tr><tr><td>FLR(M) visa fund</td><td class="tag">other</td><td class="n">£4,500</td></tr><tr><td>Min Chinese savings</td><td class="tag">other</td><td class="n">£6,590</td></tr><tr><td>Min S&S ISA</td><td class="tag">other</td><td class="n">£3,753</td></tr><tr><td>Lee S&S ISA (T212)</td><td class="tag">other</td><td class="n">£0</td></tr></tbody></table>
+  <p class="lead">The numbers bank exports can't see. Edit them as they change, then Save balances to download balances.json and commit it with your weekly upload.</p>
+  <div class="nwbig" id="w-totals"></div>
+  <div class="btns"><button class="btn primary" id="savebal">Save balances (download)</button><button class="btn" id="revertbal">Revert to saved</button></div>
+  <p class="small" id="balstate"></p>
+  <div class="seclab">Assets <span class="mut">&middot; tick = counts toward the house deposit</span></div>
+  <div class="grp" id="w-assets"></div>
+  <div class="btns"><button class="btn" id="addasset">+ add asset</button></div>
   <div class="seclab">Liabilities</div>
-  <table><thead><tr><th>Liability</th><th class="n">Owed</th></tr></thead><tbody><tr><td>Credit card (Virgin/NW)</td><td class="n neg">-£1,341</td></tr><tr><td>Undergraduate student loan</td><td class="n neg">-£3,977</td></tr></tbody></table>
+  <div class="grp" id="w-liabs"></div>
   <div class="seclab">Long-term goal &middot; House deposit</div>
-  <div class="gtrack"><div class="gfill" style="width:37%"></div><div class="glab">37%</div></div>
-  <table><tbody>
-    <tr><td>Saved so far</td><td class="n">£18,699</td></tr>
-    <tr><td>Target by May 2028</td><td class="n">£50,000</td></tr>
-    <tr><td>Still to save</td><td class="n">£31,301</td></tr>
-    <tr><td>Needed per month (23 months left)</td><td class="n">£1,361</td></tr>
-    <tr><td>Planned per month</td><td class="n">£1,500</td></tr>
-  </tbody></table>
-  <div class="small" style="margin-top:8px">Balances live in config.yaml and are updated by hand at the weekly review (bank exports show flows, not balances).</div>
+  <div class="gtrack"><div class="gfill" id="g-fill" style="width:0%"></div><div class="glab" id="g-lab">0%</div></div>
+  <div id="w-goal"></div>
 </div>
 
-<div class="foot">As of 27 Jun 2026 &middot; Lee & Min &middot; plan is git-backed (Save downloads plan.json to commit) &middot; aggregates only</div>
+<!-- SHARE MODAL -->
+<div id="shareModal" style="display:none;position:fixed;inset:0;background:rgba(26,26,24,.45);z-index:50;padding:18px;overflow:auto">
+  <div style="max-width:440px;margin:24px auto;background:var(--bg);border:1px solid var(--hair);padding:0">
+    <div id="shareCard"></div>
+    <div style="padding:12px 18px;border-top:1px solid var(--hair);display:flex;justify-content:space-between;align-items:center">
+      <span class="small">Screenshot this to send Min</span>
+      <button class="btn" onclick="document.getElementById('shareModal').style.display='none'">Close</button>
+    </div>
+  </div>
+</div>
 
-<script id="data" type="application/json">{"household": "Lee & Min", "month": "2026-06", "monthName": "June 2026", "days_total": 30, "days_elapsed": 27, "days_left": 3, "income": {"lee": 3340, "min": 1908}, "bills": [{"name": "Housing", "budget": 1966.67}, {"name": "Utilities", "budget": 270.0}, {"name": "Telecoms", "budget": 45.0}, {"name": "Loans & credit", "budget": 258.0}, {"name": "Insurance", "budget": 21.0}, {"name": "Subscriptions", "budget": 95.0}], "essential": [{"cat": "Groceries", "budget": 450.0, "actual": 688.64, "proj": 765.16}, {"cat": "Transport", "budget": 300.0, "actual": 371.1, "proj": 412.33}, {"cat": "Health/Gym", "budget": 40.0, "actual": -0.0, "proj": -0.0}], "fun": [{"cat": "Eating Out", "budget": 180.0, "actual": 283.18, "proj": 314.64}, {"cat": "Shopping", "budget": 80.0, "actual": 283.17, "proj": 314.63}, {"cat": "Entertainment", "budget": 50.0, "actual": 33.8, "proj": 37.56}, {"cat": "Travel/Holiday", "budget": 0.0, "actual": 0.0, "proj": 0.0}, {"cat": "Home/Setup", "budget": 0.0, "actual": -0.0, "proj": -0.0}, {"cat": "Other", "budget": 60.0, "actual": 39.7, "proj": 44.11}], "pockets": {"lee": 100, "min": 100, "joint_flex": 50}, "plan": {"savings_target": 1500.0, "invest_share": 0.1}, "daily": {"days_total": 30, "days_elapsed": 27, "essential": [49.83, 65.03, 71.23, 84.63, 97.33, 119.71, 201.9, 214.1, 228.0, 243.1, 250.6, 293.68, 359.29, 378.11, 386.91, 393.61, 415.06, 435.11, 471.95, 633.29, 688.3, 847.38, 855.78, 886.25, 918.65, 935.11, 1059.74, null, null, null], "fun": [4.25, 14.25, 14.25, 14.25, 28.55, 65.05, 145.12, 145.12, 174.32, 174.32, 174.32, 183.62, 206.27, 217.87, 217.87, 222.77, 222.77, 222.77, 237.76, 377.54, 585.72, 585.72, 585.72, 590.92, 606.85, 606.85, 639.85, null, null, null], "bills": [0.0, 99.11, 89.76, 114.59, 305.99, 305.99, 310.48, 310.48, 310.48, 297.7, 335.15, 425.15, 425.15, 443.14, 443.14, 418.31, 418.31, 418.31, 494.43, 494.43, 494.43, 494.43, 494.43, 494.43, 519.23, 519.23, 519.23, null, null, null]}, "goal": {"name": "House deposit", "target": 50000.0, "deadline": "2028-05-31", "current_cash": 18699.0, "components": {"Joint Monzo + spillover": 8698.0, "Premium Bonds": 10001.0, "Lee Cash ISA": 0.0, "Min Cash ISA": 0.0}, "earmarked": {"FLR(M) visa fund": 4500.0, "Min Chinese savings": 6590.0, "Min S&S ISA": 3753.0, "Lee S&S ISA (T212)": 0.0}, "pct": 37.4, "gap": 31301.0, "months_left": 23, "required_monthly": 1360.91, "planned_monthly": 1500.0, "on_track": true, "shortfall_monthly": 0.0}, "wealth": {"assets": [{"name": "Joint Monzo + spillover", "value": 8698.0, "deposit": true}, {"name": "Premium Bonds", "value": 10001.0, "deposit": true}, {"name": "Lee Cash ISA", "value": 0.0, "deposit": true}, {"name": "Min Cash ISA", "value": 0.0, "deposit": true}, {"name": "FLR(M) visa fund", "value": 4500.0, "deposit": false}, {"name": "Min Chinese savings", "value": 6590.0, "deposit": false}, {"name": "Min S&S ISA", "value": 3753.0, "deposit": false}, {"name": "Lee S&S ISA (T212)", "value": 0.0, "deposit": false}], "liabilities": [{"name": "Credit card (Virgin/NW)", "value": 1341.0}, {"name": "Undergraduate student loan", "value": 3977.0}], "total_assets": 33542.0, "total_liabilities": 5318.0, "net_worth": 28224.0}, "money": {"investments": {"month": 35.0, "total": 205.0, "items": [{"name": "TRADING 212", "amount": 200.0}, {"name": "Trading 212", "amount": 5.0}]}, "savings_pots": {"month": -2119.82, "total": 9725.21, "items": [{"name": "Emergency Fund (9k) Pot", "amount": 6826.03}, {"name": "2027 Spouse Visa Pot", "amount": 4211.45}, {"name": "Holiday Pot", "amount": 387.73}, {"name": "Savings Pot", "amount": -1700.0}]}, "debt": {"month": 2508.27, "total": 2508.27, "items": [{"name": "Student Loans Company", "amount": 2508.27}]}, "transfers": {"month": -2473.71, "total": -13131.27, "count": 49, "items": [{"name": "LEE SLATER", "amount": 6735.88}, {"name": "Rent Pot", "amount": 820.0}, {"name": "Min Liu", "amount": 153.0}, {"name": "LEE SLATER & MIN L", "amount": -26.0}, {"name": "Direct Debit Bills Pot", "amount": -32.4}, {"name": "SLATER MR LEE/REVO", "amount": -3009.88}, {"name": "Monthly Allowance  Pot", "amount": -4632.09}, {"name": "Lee Slater", "amount": -13139.78}]}, "house_sale": {"total": -113.87, "items": [{"name": "LEE SLATER", "amount": 16646.0}, {"name": "NS&I Premium Bonds", "amount": 10000.0}, {"name": "NATIONWIDE BUILDIN", "amount": -1144.54}, {"name": "TAYLOR&EMMET/CLTS", "amount": -25615.33}]}}, "saved": {"2026-06": {"income": {"lee": 3340, "min": 1908}, "bills": {"Housing": 1966.67, "Utilities": 270.0, "Telecoms": 45.0, "Loans & credit": 258.0, "Insurance": 21.0, "Subscriptions": 95.0}, "pockets": {"lee": 100, "min": 100, "joint_flex": 50}, "essential": {"Groceries": 450.0, "Transport": 300.0, "Health/Gym": 40.0}, "fun": {"Eating Out": 180.0, "Shopping": 80.0, "Entertainment": 50.0, "Travel/Holiday": 0.0, "Home/Setup": 0.0, "Other": 60.0}, "savings_target": 1500.0}}}</script>
+<div class="foot">As of 27 Jun 2026 &middot; Lee & Min &middot; plan and balances are git-backed (Save downloads a file to commit) &middot; aggregates only</div>
+
+<script id="data" type="application/json">{"household": "Lee & Min", "month": "2026-06", "monthName": "June 2026", "days_total": 30, "days_elapsed": 27, "days_left": 3, "income": {"lee": 3340, "min": 1908}, "bills": [{"name": "Housing", "budget": 1966.67}, {"name": "Utilities", "budget": 270.0}, {"name": "Telecoms", "budget": 45.0}, {"name": "Loans & credit", "budget": 258.0}, {"name": "Insurance", "budget": 21.0}, {"name": "Subscriptions", "budget": 95.0}], "essential": [{"cat": "Groceries", "budget": 450.0, "actual": 688.64, "proj": 765.16}, {"cat": "Transport", "budget": 300.0, "actual": 371.1, "proj": 412.33}, {"cat": "Health/Gym", "budget": 40.0, "actual": -0.0, "proj": -0.0}], "fun": [{"cat": "Eating Out", "budget": 180.0, "actual": 283.18, "proj": 314.64}, {"cat": "Shopping", "budget": 80.0, "actual": 283.17, "proj": 314.63}, {"cat": "Entertainment", "budget": 50.0, "actual": 33.8, "proj": 37.56}, {"cat": "Travel/Holiday", "budget": 0.0, "actual": 0.0, "proj": 0.0}, {"cat": "Home/Setup", "budget": 0.0, "actual": -0.0, "proj": -0.0}, {"cat": "Other", "budget": 60.0, "actual": 39.7, "proj": 44.11}], "pockets": {"lee": 100, "min": 100, "joint_flex": 50}, "plan": {"savings_target": 1500.0, "invest_share": 0.1}, "daily": {"days_total": 30, "days_elapsed": 27, "essential": [49.83, 65.03, 71.23, 84.63, 97.33, 119.71, 201.9, 214.1, 228.0, 243.1, 250.6, 293.68, 359.29, 378.11, 386.91, 393.61, 415.06, 435.11, 471.95, 633.29, 688.3, 847.38, 855.78, 886.25, 918.65, 935.11, 1059.74, null, null, null], "fun": [4.25, 14.25, 14.25, 14.25, 28.55, 65.05, 145.12, 145.12, 174.32, 174.32, 174.32, 183.62, 206.27, 217.87, 217.87, 222.77, 222.77, 222.77, 237.76, 377.54, 585.72, 585.72, 585.72, 590.92, 606.85, 606.85, 639.85, null, null, null], "bills": [0.0, 99.11, 89.76, 114.59, 305.99, 305.99, 310.48, 310.48, 310.48, 297.7, 335.15, 425.15, 425.15, 443.14, 443.14, 418.31, 418.31, 418.31, 494.43, 494.43, 494.43, 494.43, 494.43, 494.43, 519.23, 519.23, 519.23, null, null, null]}, "goal": {"name": "House deposit", "target": 50000.0, "deadline": "2028-05-31", "current_cash": 18699.0, "components": {"Joint Monzo + spillover": 8698.0, "Lee Premium Bonds": 10001.0, "Min Premium Bonds": 0.0, "Lee Cash ISA": 0.0, "Min Cash ISA": 0.0}, "earmarked": {"FLR(M) visa fund": 4500.0, "Min Chinese savings": 6590.0, "Lee S&S ISA \u2014 core (VWRL)": 0.0, "Lee S&S ISA \u2014 satellite (higher risk)": 0.0, "Min S&S ISA": 3753.0}, "pct": 37.4, "gap": 31301.0, "months_left": 23, "required_monthly": 1360.91, "planned_monthly": 1500.0, "on_track": true, "shortfall_monthly": 0.0}, "wealth": {"assets": [{"name": "Joint Monzo + spillover", "value": 8698.0, "deposit": true}, {"name": "Lee Premium Bonds", "value": 10001.0, "deposit": true}, {"name": "Min Premium Bonds", "value": 0.0, "deposit": true}, {"name": "Lee Cash ISA", "value": 0.0, "deposit": true}, {"name": "Min Cash ISA", "value": 0.0, "deposit": true}, {"name": "FLR(M) visa fund", "value": 4500.0, "deposit": false}, {"name": "Min Chinese savings", "value": 6590.0, "deposit": false}, {"name": "Lee S&S ISA \u2014 core (VWRL)", "value": 0.0, "deposit": false}, {"name": "Lee S&S ISA \u2014 satellite (higher risk)", "value": 0.0, "deposit": false}, {"name": "Min S&S ISA", "value": 3753.0, "deposit": false}], "liabilities": [{"name": "Credit card (Virgin/NW)", "value": 1341.0}, {"name": "Undergraduate student loan", "value": 3977.0}], "total_assets": 33542.0, "total_liabilities": 5318.0, "net_worth": 28224.0}, "money": {"investments": {"month": 35.0, "total": 35.0, "items": [{"name": "TRADING 212", "amount": 30.0}, {"name": "Trading 212", "amount": 5.0}]}, "savings_pots": {"month": -2119.82, "total": -2119.82, "items": [{"name": "Holiday Pot", "amount": 56.87}, {"name": "2027 Spouse Visa Pot", "amount": -2.72}, {"name": "Emergency Fund (9k) Pot", "amount": -2173.97}]}, "debt": {"month": 2508.27, "total": 2508.27, "items": [{"name": "Student Loans Company", "amount": 2508.27}]}, "transfers": {"month": -2473.71, "total": -2473.71, "count": 13, "items": [{"name": "LEE SLATER", "amount": 26.0}, {"name": "Min Liu", "amount": -5.0}, {"name": "LEE SLATER & MIN L", "amount": -26.0}, {"name": "Direct Debit Bills Pot", "amount": -32.4}, {"name": "Monthly Allowance  Pot", "amount": -2436.31}]}, "house_sale": {"total": -0.0, "items": []}}, "saved": {"2026-06": {"income": {"lee": 3340, "min": 1908}, "bills": {"Housing": 1966.67, "Utilities": 270.0, "Telecoms": 45.0, "Loans & credit": 258.0, "Insurance": 21.0, "Subscriptions": 95.0}, "pockets": {"lee": 100, "min": 100, "joint_flex": 50}, "essential": {"Groceries": 450.0, "Transport": 300.0, "Health/Gym": 40.0}, "fun": {"Eating Out": 180.0, "Shopping": 80.0, "Entertainment": 50.0, "Travel/Holiday": 0.0, "Home/Setup": 0.0, "Other": 60.0}, "savings_target": 1500.0}}}</script>
 <script>
 const D=JSON.parse(document.getElementById('data').textContent);
 const KEY='mithril_draft_'+D.month;
@@ -236,6 +241,66 @@ document.getElementById('download').addEventListener('click',()=>{
  const blob=new Blob([JSON.stringify(merged,null,2)],{type:'application/json'});
  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='plan.json';a.click();
 });
-buildInputs();recompute();moneyCards();
+
+// WEALTH (editable balances, git-backed balances.json)
+const BALKEY='mithril_baldraft';
+function freshBal(){return {assets:JSON.parse(JSON.stringify(D.wealth.assets||[])),liabilities:JSON.parse(JSON.stringify(D.wealth.liabilities||[]))};}
+let BAL=(()=>{try{const d=JSON.parse(localStorage.getItem(BALKEY));if(d&&d.assets)return d;}catch(e){} return freshBal();})();
+function buildWealth(){
+ const A=document.getElementById('w-assets');A.innerHTML='';
+ BAL.assets.forEach((a,i)=>{const r=document.createElement('div');r.className='row';
+  r.innerHTML=`<label><input type="checkbox" ${a.deposit?'checked':''} class="depchk" data-i="${i}" style="margin-right:8px">${a.name}</label>`;
+  const inp=document.createElement('input');inp.type='number';inp.className='num';inp.value=a.value;inp.step='1';
+  inp.addEventListener('input',()=>{BAL.assets[i].value=parseFloat(inp.value)||0;recomputeWealth();});
+  r.appendChild(inp);A.appendChild(r);});
+ A.querySelectorAll('.depchk').forEach(c=>c.addEventListener('change',()=>{BAL.assets[+c.dataset.i].deposit=c.checked;recomputeWealth();}));
+ const L=document.getElementById('w-liabs');L.innerHTML='';
+ BAL.liabilities.forEach((li,i)=>{const r=document.createElement('div');r.className='row';
+  r.innerHTML=`<label>${li.name}</label>`;
+  const inp=document.createElement('input');inp.type='number';inp.className='num';inp.value=li.value;inp.step='1';
+  inp.addEventListener('input',()=>{BAL.liabilities[i].value=parseFloat(inp.value)||0;recomputeWealth();});
+  r.appendChild(inp);L.appendChild(r);});
+}
+function recomputeWealth(){
+ const ta=BAL.assets.reduce((s,a)=>s+(+a.value||0),0),tl=BAL.liabilities.reduce((s,a)=>s+(+a.value||0),0),nw=ta-tl;
+ const dep=BAL.assets.filter(a=>a.deposit).reduce((s,a)=>s+(+a.value||0),0);
+ document.getElementById('w-totals').innerHTML=
+  `<div class="nwc"><div class="k">Net worth</div><div class="v">${f0(nw)}</div></div>
+   <div class="nwc"><div class="k">Total assets</div><div class="v">${f0(ta)}</div></div>
+   <div class="nwc"><div class="k">Total liabilities</div><div class="v">${f0(tl)}</div></div>`;
+ const tgt=D.goal.target||0,ml=D.goal.months_left||1,pl=D.goal.planned_monthly||0;
+ const pct=tgt?Math.min(100,dep/tgt*100):0,gap=Math.max(0,tgt-dep),need=gap/ml;
+ document.getElementById('g-fill').style.width=pct+'%';document.getElementById('g-lab').textContent=Math.round(pct)+'%';
+ document.getElementById('w-goal').innerHTML=`<table><tbody>
+   <tr><td>Saved so far (deposit-eligible)</td><td class="n">${f0(dep)}</td></tr>
+   <tr><td>Target by May 2028</td><td class="n">${f0(tgt)}</td></tr>
+   <tr><td>Still to save</td><td class="n">${f0(gap)}</td></tr>
+   <tr><td>Needed per month (${ml} left)</td><td class="n">${f0(need)}</td></tr>
+   <tr><td>Planned per month</td><td class="n">${f0(pl)}</td></tr></tbody></table>`;
+ localStorage.setItem(BALKEY,JSON.stringify(BAL));
+ document.getElementById('balstate').textContent='Editing balances on this device. Save balances to download balances.json and commit it.';
+}
+document.getElementById('savebal').addEventListener('click',()=>{
+ const blob=new Blob([JSON.stringify(BAL,null,2)],{type:'application/json'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='balances.json';a.click();});
+document.getElementById('revertbal').addEventListener('click',()=>{BAL=freshBal();buildWealth();recomputeWealth();});
+document.getElementById('addasset').addEventListener('click',()=>{const n=prompt('Asset name');if(!n)return;BAL.assets.push({name:n,value:0,deposit:false});buildWealth();recomputeWealth();});
+
+// SHARE card for Min
+function share(){
+ const income=(+S.income.lee||0)+(+S.income.min||0),bills=sum(S.bills),pockets=sum(S.pockets),ess=sum(S.essential),fun=sum(S.fun);
+ const saving=income-bills-pockets-ess-fun,ish=D.plan.invest_share,invest=Math.max(0,saving)*ish,cash=saving-invest;
+ const row=(l,v,st)=>`<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--hair);${st?'font-weight:600;font-size:17px':''}"><span>${l}</span><span>${f0(v)}</span></div>`;
+ document.getElementById('shareCard').innerHTML=`<div style="padding:22px 24px">
+   <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)">${D.household} &middot; the plan</div>
+   <div style="font-size:26px;font-weight:300;margin:2px 0 16px">${D.monthName}</div>
+   ${row('Income',income)}${row('Bills',bills)}${row('Pockets',pockets)}${row('Essentials',ess)}${row('Fun money',fun)}
+   <div style="height:10px"></div>${row('Saving',saving,true)}
+   <div style="font-size:12.5px;color:var(--ink2);margin-top:8px">${f0(invest)} invested &middot; ${f0(cash)} to the house deposit</div></div>`;
+ document.getElementById('shareModal').style.display='block';
+}
+document.getElementById('share').addEventListener('click',share);
+
+buildInputs();recompute();moneyCards();buildWealth();recomputeWealth();
 </script>
 </div></body></html>
